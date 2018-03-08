@@ -9,7 +9,7 @@ protocol HeaderViewDelegate: class {
 open class HeaderView: UIView {
     open fileprivate(set) lazy var closeButton: UIButton = { [unowned self] in
         let title = NSAttributedString(
-            string: LightboxConfig.CloseButton.text, // almog todo change
+            string: LightboxConfig.CloseButton.text,
             attributes: LightboxConfig.CloseButton.textAttributes)
         
         let button = UIButton(type: .system)
@@ -34,10 +34,9 @@ open class HeaderView: UIView {
         return button
         }()
     
-    // almog -> copy to original project
     open fileprivate(set) lazy var sendButton: UIButton = { [unowned self] in
         let title = NSAttributedString(
-            string: LightboxConfig.SendButton.text, // almog todo change
+            string: LightboxConfig.SendButton.text, 
             attributes: LightboxConfig.SendButton.textAttributes)
         
         let button = UIButton(type: .system)

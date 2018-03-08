@@ -424,7 +424,7 @@ extension LightboxController: HeaderViewDelegate {
         dismissalDelegate?.lightboxControllerWillDismiss(self)
         dismiss(animated: true, completion: nil)
     }
-    // todo almog take to original
+    
     func headerView(_ headerView: HeaderView, didPressSendButton sendButton: UIButton) {
         didSendDelegate?.lightboxController(self, didPressSendButton: sendButton)
     }

@@ -43,6 +43,8 @@ open class PageView: UIScrollView {
         return zoomScale != 1.0
     }
     
+    var enableDoubleTap: Bool = true
+    
     // MARK: - Initializers
     
     init(image: LightboxImage) {
@@ -89,10 +91,12 @@ open class PageView: UIScrollView {
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         
-        let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(scrollViewDoubleTapped(_:)))
-        doubleTapRecognizer.numberOfTapsRequired = 2
-        doubleTapRecognizer.numberOfTouchesRequired = 1
-        addGestureRecognizer(doubleTapRecognizer)
+        if enableDoubleTap {
+            let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(scrollViewDoubleTapped(_:)))
+            doubleTapRecognizer.numberOfTapsRequired = 2
+            doubleTapRecognizer.numberOfTouchesRequired = 1
+            addGestureRecognizer(doubleTapRecognizer)
+        }
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:)))
         addGestureRecognizer(tapRecognizer)
